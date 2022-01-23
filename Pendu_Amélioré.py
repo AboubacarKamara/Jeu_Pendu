@@ -26,12 +26,12 @@ erreur = 8
 while affichemot(mot,propos) != affichemot(mot,mot) and erreur > 0:
     print ("Il vous reste", erreur, "chance(s).")
     print (affichemot(mot,propos))
-    lettre = input("Proposez une lettre")
+    lettre = input("Proposez une lettre :")
+    if lettre.lower() in propos.lower() :
+        print ("Cette lettre a déjà été proposée...")
     propos = propos + lettre
     if lettre.lower() not in mot :
         erreur = erreur - 1
-    if lettre.lower() in propos.lower() :
-        print ("Cette lettre a déjà été proposée...")
 if erreur == 0 :
     print ("Le mot était", mot)
 else :
